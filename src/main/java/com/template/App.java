@@ -55,7 +55,7 @@ public class App {
     public String reverse(String input) {
         // TODO: Implement this method
         String buffer = "";
-        for (int i = input.length(); i >= 0;i--){
+        for (int i = input.length() - 1; i >= 0; i--) {
             buffer += input.charAt(i);
         }
         return buffer;
@@ -87,7 +87,7 @@ public class App {
     public int arraySum(int[] array) {
         // TODO: Implement this method
         int sum = 0;
-        for (int i = 0;i <= array.length;i++){
+        for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
         return sum;
@@ -110,7 +110,11 @@ public class App {
 
     // 12. Find the Largest Element in a List
     public int findMax(List<Integer> list) {
-        int max = Integer.MIN_VALUE;
+        // TODO: Implement this method
+        if (list == null || list.isEmpty()) {
+            throw new IllegalArgumentException("List is empty");
+        }
+        int max = list.get(0);
         for (int num : list) {
             if (num > max) {
                 max = num;
@@ -176,7 +180,7 @@ public class App {
     public List<String> iterateMap(Map<String, String> map) {
         List<String> result = new ArrayList<>();
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            result.add(entry.getKey() + "=" + entry.getValue());
+            result.add(entry.getKey() + ": " + entry.getValue());
         }
         return result;
     }
