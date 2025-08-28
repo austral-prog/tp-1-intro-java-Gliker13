@@ -179,9 +179,9 @@ public class App {
     // 21. Iterate Over a Map
     public List<String> iterateMap(Map<String, String> map) {
         List<String> result = new ArrayList<>();
-        map.entrySet().stream()
-            .sorted(Map.Entry.comparingByKey())
-            .forEach(entry -> result.add(entry.getKey() + ": " + entry.getValue()));
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            result.add(entry.getKey() + " -> " + entry.getValue());
+        }
         return result;
     }
 }
